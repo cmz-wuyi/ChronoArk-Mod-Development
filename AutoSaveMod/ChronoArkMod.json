@@ -1,0 +1,16 @@
+{
+    "ModId": "AutoSaveMod",
+    "DisplayName": "自动存档Mod",
+    "Author": "cmz",
+    "Version": "1.0.0",
+    "Description": "自动存档功能 - 战斗结束/进入关卡/退出游戏自动存档，F4打开控制台，支持快速读档和手动读档",
+    "EntryDll": "AutoSaveMod.dll",
+    "ModAssembly": "AutoSaveMod.dll",
+    "HomePage": "",
+    "Repository": "https://github.com/cmz-wuyi/ChronoArk-Mod-Development",
+    "Tags": ["gameplay"],
+    "Dependencies": [],
+    "IsDev": false,
+    "Hide": false,
+    "Language": "zh"
+}

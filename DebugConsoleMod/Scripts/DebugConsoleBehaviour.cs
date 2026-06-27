@@ -238,17 +238,17 @@ namespace DebugConsoleMod
 
             if (!confirmReset)
             {
-                if (GUILayout.Button("清除测试状态（恢复初始）", buttonStyle, GUILayout.Height(44)))
+                if (GUILayout.Button("重置审判官事件标记", buttonStyle, GUILayout.Height(44)))
                 {
                     confirmReset = true;
-                    Log("确认清除测试状态？再次点击执行");
+                    Log("确认重置审判官事件标记？再次点击执行");
                 }
-                GUILayout.Label("执行：审判官事件=false + 乔汉任务完成=false + 进度=0", smallHintStyle);
-                GUILayout.Label("用途：恢复初始状态，清除之前测试残留的状态", smallHintStyle);
+                GUILayout.Label("执行：审判官事件=false（保留乔汉任务完成状态）", smallHintStyle);
+                GUILayout.Label("用途：清除审判官事件触发标记，让事件可在白色墓地重新随机触发", smallHintStyle);
             }
             else
             {
-                GUILayout.Label("确认清除？将重置所有审判官相关标志", warningStyle);
+                GUILayout.Label("确认重置？仅清除审判官事件标记，保留任务完成状态", warningStyle);
                 GUILayout.BeginHorizontal();
                 if (GUILayout.Button("确认清除", buttonStyle, GUILayout.Height(44)))
                 {
@@ -573,10 +573,13 @@ namespace DebugConsoleMod
         {
             SafeAction(() =>
             {
+                // 只重置审判官事件触发标记，让事件可在白色墓地重新随机触发
                 PlayData.TSavedata.TheInquisition = false;
-                SaveManager.NowData.storydata.JohanQuestClear = false;
-                SaveManager.NowData.storydata.JohanQuestProgress = 0;
-                Log("所有标志已重置（TheInquisition=false, JohanQuestClear=false, Progress=0）");
+                // 保留 JohanQuestClear 和 JohanQuestProgress（任务保持已完成状态）
+                Log("审判官事件标记已重置（TheInquisition=false）");
+                Log("乔汉任务完成状态保留（JohanQuestClear=" +
+                    SaveManager.NowData.storydata.JohanQuestClear + ", Progress=" +
+                    SaveManager.NowData.storydata.JohanQuestProgress + "）");
             });
         }
 
