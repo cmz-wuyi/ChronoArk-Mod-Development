@@ -1,0 +1,16 @@
+{
+    "ModId": "BossReplaceMod",
+    "DisplayName": "Boss替换功能Mod",
+    "Author": "cmz",
+    "Version": "1.0.0",
+    "Description": "自定义Boss替换功能，支持通过JSON配置文件自定义Boss替换规则",
+    "EntryDll": "BossReplaceMod.dll",
+    "ModAssembly": "BossReplaceMod.dll",
+    "HomePage": "",
+    "Repository": "",
+    "Tags": ["gameplay"],
+    "Dependencies": [],
+    "IsDev": false,
+    "Hide": false,
+    "Language": "zh"
+}

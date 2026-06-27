@@ -1,0 +1,16 @@
+{
+    "ModId": "BossFixMod",
+    "DisplayName": "Boss替换修复Mod",
+    "Author": "cmz",
+    "Version": "1.0.0",
+    "Description": "修复异端审判所事件触发后Boss不替换为异端审判官犹大的bug",
+    "EntryDll": "BossFixMod.dll",
+    "ModAssembly": "BossFixMod.dll",
+    "HomePage": "",
+    "Repository": "",
+    "Tags": ["bugfix"],
+    "Dependencies": [],
+    "IsDev": false,
+    "Hide": false,
+    "Language": "zh"
+}

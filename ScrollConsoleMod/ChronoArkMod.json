@@ -1,0 +1,15 @@
+{
+    "Name": "ScrollConsoleMod",
+    "Author": "cmz",
+    "Version": "1.0.0",
+    "Description": "卷轴获取控制台 - F3 开关，提供11种卷轴的获取",
+    "Uploader": "",
+    "WorkshopId": "",
+    "Dependencies": [],
+    "Assemblies": [
+        "ScrollConsoleMod.dll"
+    ],
+    "AssetBundles": [],
+    "GdataPath": [],
+    "UseMod": true
+}

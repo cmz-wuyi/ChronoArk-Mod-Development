@@ -1,0 +1,15 @@
+{
+    "Name": "MyFirstMod",
+    "Author": "cmz",
+    "Version": "1.0.0",
+    "Description": "最小骨架模板 - 供新 mod 开发参考",
+    "Uploader": "",
+    "WorkshopId": "",
+    "Dependencies": [],
+    "Assemblies": [
+        "MyFirstMod.dll"
+    ],
+    "AssetBundles": [],
+    "GdataPath": [],
+    "UseMod": true
+}

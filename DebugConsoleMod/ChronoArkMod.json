@@ -1,0 +1,16 @@
+{
+    "ModId": "DebugConsoleMod",
+    "DisplayName": "调试控制台",
+    "Author": "cmz",
+    "Version": "1.0.0",
+    "Description": "游戏内调试控制台，按F1打开。提供状态查看、关卡跳转、Boss替换测试等功能",
+    "EntryDll": "DebugConsoleMod.dll",
+    "ModAssembly": "DebugConsoleMod.dll",
+    "HomePage": "",
+    "Repository": "",
+    "Tags": ["debug"],
+    "Dependencies": [],
+    "IsDev": false,
+    "Hide": false,
+    "Language": "zh"
+}

@@ -1,0 +1,29 @@
+# 编译产物
+[Bb]in/
+[Oo]bj/
+
+# 游戏依赖库（版权文件，用户需自行提供）
+libs/
+
+# 工具目录（dnSpy 等）
+tools/
+
+# 调试符号和缓存
+*.pdb
+*.cache
+*.FileListAbsolute.txt
+
+# IDE 文件
+.vs/
+.vscode/
+*.user
+*.suo
+.idea/
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 日志文件
+*.log
