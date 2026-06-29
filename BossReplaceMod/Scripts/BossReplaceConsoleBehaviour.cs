@@ -63,23 +63,23 @@ namespace BossReplaceMod
 
             headerStyle = new GUIStyle(GUI.skin.label)
             {
-                fontSize = 20,
+                fontSize = 28,
                 fontStyle = FontStyle.Bold
             };
-            headerStyle.normal.textColor = new Color(1f, 0.92f, 0.4f);
+            headerStyle.normal.textColor = new Color(1f, 0.97f, 0.6f);
 
-            normalStyle = new GUIStyle(GUI.skin.label) { fontSize = 18 };
+            normalStyle = new GUIStyle(GUI.skin.label) { fontSize = 25 };
             normalStyle.normal.textColor = Color.white;
 
-            logStyle = new GUIStyle(GUI.skin.label) { fontSize = 16 };
-            logStyle.normal.textColor = new Color(0.85f, 0.85f, 0.85f);
+            logStyle = new GUIStyle(GUI.skin.label) { fontSize = 23 };
+            logStyle.normal.textColor = new Color(0.95f, 0.95f, 0.95f);
 
-            buttonStyle = new GUIStyle(GUI.skin.button) { fontSize = 18 };
+            buttonStyle = new GUIStyle(GUI.skin.button) { fontSize = 25 };
 
-            smallHintStyle = new GUIStyle(GUI.skin.label) { fontSize = 15 };
-            smallHintStyle.normal.textColor = new Color(0.7f, 0.85f, 1f);
+            smallHintStyle = new GUIStyle(GUI.skin.label) { fontSize = 23 };
+            smallHintStyle.normal.textColor = new Color(0.85f, 0.95f, 1f);
 
-            textFieldStyle = new GUIStyle(GUI.skin.textField) { fontSize = 18 };
+            textFieldStyle = new GUIStyle(GUI.skin.textField) { fontSize = 25 };
 
             stylesInitialized = true;
         }
@@ -94,7 +94,7 @@ namespace BossReplaceMod
             // 调用控制面板绘制
             controlPanel.DrawPanel(Log, headerStyle, normalStyle, buttonStyle, smallHintStyle, textFieldStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === 切换提示 ===
             GUILayout.Label("═══ 切换其他控制台 ═══", headerStyle);
@@ -104,7 +104,7 @@ namespace BossReplaceMod
 
             GUILayout.EndScrollView();
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // === 日志区域（固定在底部）===
             GUILayout.Label("═══ 操作日志 ═══", headerStyle);

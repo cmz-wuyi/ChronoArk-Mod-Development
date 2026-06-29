@@ -226,6 +226,11 @@ ModDevelopment/
 5. **GDEItemKeys 值不匹配**：字段名与运行时值不同（如 `Item_Equip_Torch_FanaticBoss` → `Torch_FanaticBoss`），需用反射读取
 6. **PatchAll 无效**：Harmony 补丁必须手动 `Patch()`，不能依赖 `PatchAll()`
 7. **GetTypes 异常被静默捕获**：编译错误会导致 `Assembly.GetTypes()` 抛异常，但游戏静默捕获不报错，需仔细检查日志
+8. **Save0.sav 不被写入**：`SaveManager.Save()` 只写 Save1.sav，必须用 `ProgressOneSave()` 同时写两个存档
+9. **TempSaveLoad() 丢弃有效存档**：检查 `StageNum==0` 并丢弃数据，但 0 是第一章第一节正常值，需用 `XMLDeserialize_TempData()` 绕过
+10. **双重 OneSaveLoad() 导致 NRE**：手动调用 + `FieldSystem.Load()` 协程内调用 = 第二次 V0 备份重建后角色 → NRE，应让协程独占处理
+11. **LoadOneSaveMap() 缺守卫清空 Party**：直接调用会触发新游戏初始化，应用 `FieldSystem.Load()` 协程（含 IsLoaded 守卫）
+12. **读档后 BGM 重复**：读档前需调用 `FindObjectsOfType<AudioSource>()` 停止所有正在播放的音频
 
 ## 许可证
 

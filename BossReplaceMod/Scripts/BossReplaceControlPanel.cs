@@ -155,7 +155,7 @@ namespace BossReplaceMod
             GUILayout.Label("Boss替换 = 在进入Boss战时，把原版Boss换成指定的Boss", smallHintStyle);
             GUILayout.Label("通过「规则」来决定：在什么条件下、把哪个Boss、换成哪个Boss", smallHintStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             object config;
             try
@@ -179,7 +179,7 @@ namespace BossReplaceMod
             GUILayout.Label("Boss替换 = 在进入Boss战时，把原版Boss换成指定的Boss", normalStyle);
             GUILayout.Label("本Mod通过「规则」来决定：在什么条件下、把哪个Boss、换成哪个Boss", smallHintStyle);
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // === 替换流程图 ===
             GUILayout.Label("═══ 替换流程图 ═══", headerStyle);
@@ -187,7 +187,7 @@ namespace BossReplaceMod
             GUILayout.Label("                            ↓", smallHintStyle);
             GUILayout.Label("                      匹配失败 → 不替换，用原版Boss", smallHintStyle);
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 顶部状态区 ===
             GUILayout.Label("═══ Mod状态 ═══", headerStyle);
@@ -241,7 +241,7 @@ namespace BossReplaceMod
             }
             GUILayout.EndHorizontal();
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 规则匹配逻辑说明 ===
             GUILayout.Label("═══ 规则匹配逻辑 ═══", headerStyle);
@@ -251,7 +251,7 @@ namespace BossReplaceMod
             GUILayout.Label("  ③ 匹配成功！→ 用此规则的新Boss替换", smallHintStyle);
             GUILayout.Label("  所有规则都不匹配 → 不替换", smallHintStyle);
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 规则列表区 ===
             var rulesField = configType.GetField("Rules");
@@ -287,7 +287,7 @@ namespace BossReplaceMod
                 DrawRuleCard(rules, i, logger);
             }
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 添加新规则区 ===
             GUILayout.Label("═══ 添加新规则 ═══", headerStyle);
@@ -332,7 +332,7 @@ namespace BossReplaceMod
             }
             GUILayout.EndHorizontal();
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 操作按钮区 ===
             GUILayout.Label("═══ 操作按钮 ═══", headerStyle);
@@ -366,7 +366,7 @@ namespace BossReplaceMod
             GUILayout.Label("保存：把当前规则写入JSON文件（永久生效）", smallHintStyle);
             GUILayout.Label("重新加载：从JSON文件读取规则（放弃当前修改）", smallHintStyle);
 
-            GUILayout.Space(4);
+            GUILayout.Space(7);
 
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("测试：当前关卡会替换成什么", buttonStyle, GUILayout.Height(44)))
@@ -393,7 +393,7 @@ namespace BossReplaceMod
             GUILayout.Label("测试：检查当前关卡是否匹配规则", smallHintStyle);
             GUILayout.Label("一键测试：跳转Stage3 + 设置标志 + 显示EnemyQueue", smallHintStyle);
 
-            GUILayout.Space(4);
+            GUILayout.Space(7);
 
             if (GUILayout.Button("显示配置文件位置", buttonStyle, GUILayout.Height(40)))
             {
@@ -401,7 +401,7 @@ namespace BossReplaceMod
                 logger("  " + (configPath ?? "(未知)"));
             }
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 使用教程 ===
             GUILayout.Label("═══ 使用教程 ═══", headerStyle);
@@ -411,14 +411,14 @@ namespace BossReplaceMod
             GUILayout.Label("  2. 点「一键测试完整流程」", smallHintStyle);
             GUILayout.Label("  3. 进入Boss战 → 犹大出现", smallHintStyle);
 
-            GUILayout.Space(3);
+            GUILayout.Space(6);
 
             GUILayout.Label("方式2：自定义规则", normalStyle);
             GUILayout.Label("  1. 编辑上方规则的字段（每项下方有说明）", smallHintStyle);
             GUILayout.Label("  2. 点「保存到配置文件」", smallHintStyle);
             GUILayout.Label("  3. 进入对应关卡的Boss战", smallHintStyle);
 
-            GUILayout.Space(3);
+            GUILayout.Space(6);
 
             GUILayout.Label("方式3：添加新规则", normalStyle);
             GUILayout.Label("  1. 在下方填写5个字段", smallHintStyle);
@@ -426,7 +426,7 @@ namespace BossReplaceMod
             GUILayout.Label("  3. 点「保存到配置文件」", smallHintStyle);
             GUILayout.Label("  4. 进入对应关卡的Boss战", smallHintStyle);
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             GUILayout.Label("═══ 与通用调试标签页的区别 ═══", headerStyle);
             GUILayout.Label("通用调试的「暴力替换」= 直接改队列，立即生效，不管规则", smallHintStyle);
@@ -683,7 +683,7 @@ namespace BossReplaceMod
 
             errorStyle = new GUIStyle(GUI.skin.label)
             {
-                fontSize = 15,
+                fontSize = 18,
                 fontStyle = FontStyle.Bold
             };
             errorStyle.normal.textColor = Color.red;

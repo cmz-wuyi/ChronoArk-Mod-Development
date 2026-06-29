@@ -78,30 +78,30 @@ namespace AutoSaveMod
 
             headerStyle = new GUIStyle(GUI.skin.label)
             {
-                fontSize = 20,
+                fontSize = 28,
                 fontStyle = FontStyle.Bold
             };
-            headerStyle.normal.textColor = new Color(1f, 0.92f, 0.4f);
+            headerStyle.normal.textColor = new Color(1f, 0.97f, 0.6f);
 
-            normalStyle = new GUIStyle(GUI.skin.label) { fontSize = 18 };
+            normalStyle = new GUIStyle(GUI.skin.label) { fontSize = 25 };
             normalStyle.normal.textColor = Color.white;
 
-            logStyle = new GUIStyle(GUI.skin.label) { fontSize = 16 };
-            logStyle.normal.textColor = new Color(0.85f, 0.85f, 0.85f);
+            logStyle = new GUIStyle(GUI.skin.label) { fontSize = 23 };
+            logStyle.normal.textColor = new Color(0.95f, 0.95f, 0.95f);
 
-            buttonStyle = new GUIStyle(GUI.skin.button) { fontSize = 18 };
+            buttonStyle = new GUIStyle(GUI.skin.button) { fontSize = 25 };
 
-            smallHintStyle = new GUIStyle(GUI.skin.label) { fontSize = 15 };
-            smallHintStyle.normal.textColor = new Color(0.7f, 0.85f, 1f);
+            smallHintStyle = new GUIStyle(GUI.skin.label) { fontSize = 23 };
+            smallHintStyle.normal.textColor = new Color(0.85f, 0.95f, 1f);
 
             warningStyle = new GUIStyle(GUI.skin.label)
             {
-                fontSize = 18,
+                fontSize = 25,
                 fontStyle = FontStyle.Bold
             };
-            warningStyle.normal.textColor = new Color(1f, 0.4f, 0.4f);
+            warningStyle.normal.textColor = new Color(1f, 0.5f, 0.5f);
 
-            textFieldStyle = new GUIStyle(GUI.skin.textField) { fontSize = 18 };
+            textFieldStyle = new GUIStyle(GUI.skin.textField) { fontSize = 25 };
 
             stylesInitialized = true;
         }
@@ -117,7 +117,7 @@ namespace AutoSaveMod
             saveContent.DrawContent(headerStyle, normalStyle, buttonStyle, smallHintStyle,
                 warningStyle, textFieldStyle, Log);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === 切换提示 ===
             GUILayout.Label("═══ 切换其他控制台 ═══", headerStyle);
@@ -128,7 +128,7 @@ namespace AutoSaveMod
 
             GUILayout.EndScrollView();
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // === 日志区域（固定在底部，120px）===
             GUILayout.Label("═══ 操作日志 ═══", headerStyle);

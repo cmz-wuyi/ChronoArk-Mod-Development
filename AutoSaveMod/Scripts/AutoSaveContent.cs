@@ -39,17 +39,17 @@ namespace AutoSaveMod
             // 1. 新手引导区
             DrawHelpSection(headerStyle, normalStyle, smallHintStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // 2. 设置区
             DrawSettingsSection(headerStyle, normalStyle, buttonStyle, smallHintStyle, textFieldStyle, logger);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // 3. 操作区
             DrawActionSection(headerStyle, buttonStyle, warningStyle, logger);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // 4. 存档列表区
             DrawBackupListSection(headerStyle, normalStyle, buttonStyle, smallHintStyle, warningStyle, logger);
@@ -118,14 +118,14 @@ namespace AutoSaveMod
             GUILayout.EndHorizontal();
             GUILayout.Label("提示：过多存档可能造成手动读档时卡顿", smallHintStyle);
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // 自动存档开关
             config.AutoSaveOnBattleEnd = GUILayout.Toggle(config.AutoSaveOnBattleEnd, "  战斗结束自动存档", normalStyle);
             config.AutoSaveOnStageStart = GUILayout.Toggle(config.AutoSaveOnStageStart, "  进入关卡自动存档", normalStyle);
             config.AutoSaveOnQuit = GUILayout.Toggle(config.AutoSaveOnQuit, "  退出游戏自动存档", normalStyle);
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // 关卡延迟设置
             GUILayout.Label("关卡进入后延迟存档秒数（0.5-10）：", normalStyle);
@@ -134,7 +134,7 @@ namespace AutoSaveMod
             GUILayout.Label("秒（防篝火崩溃，建议2秒）", smallHintStyle);
             GUILayout.EndHorizontal();
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // 保存设置按钮
             if (GUILayout.Button("保存设置", buttonStyle, GUILayout.Height(36)))
@@ -246,7 +246,7 @@ namespace AutoSaveMod
             int maxSaves = AutoSaveManager.Config != null ? AutoSaveManager.Config.MaxSaves : 5;
             GUILayout.Label("共 " + currentCount + " / " + maxSaves + " 个存档", normalStyle);
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // 绘制每个备份条目
             for (int i = 0; i < backupList.Count; i++)
@@ -254,7 +254,7 @@ namespace AutoSaveMod
                 var backup = backupList[i];
                 DrawBackupEntry(backup, i + 1, headerStyle, normalStyle, buttonStyle,
                     smallHintStyle, warningStyle, logger);
-                GUILayout.Space(3);
+                GUILayout.Space(6);
             }
         }
 

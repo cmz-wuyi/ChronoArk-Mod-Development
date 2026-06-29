@@ -65,24 +65,28 @@ namespace DebugConsoleMod
 
             headerStyle = new GUIStyle(GUI.skin.label)
             {
-                fontSize = 20,
+                fontSize = 28,
                 fontStyle = FontStyle.Bold
             };
-            headerStyle.normal.textColor = new Color(1f, 0.92f, 0.4f);
+            headerStyle.normal.textColor = new Color(1f, 0.97f, 0.6f);
 
-            normalStyle = new GUIStyle(GUI.skin.label) { fontSize = 18 };
+            normalStyle = new GUIStyle(GUI.skin.label) { fontSize = 25 };
             normalStyle.normal.textColor = Color.white;
 
-            logStyle = new GUIStyle(GUI.skin.label) { fontSize = 16 };
-            logStyle.normal.textColor = new Color(0.85f, 0.85f, 0.85f);
+            logStyle = new GUIStyle(GUI.skin.label) { fontSize = 23 };
+            logStyle.normal.textColor = new Color(0.95f, 0.95f, 0.95f);
 
-            buttonStyle = new GUIStyle(GUI.skin.button) { fontSize = 18 };
+            buttonStyle = new GUIStyle(GUI.skin.button) { fontSize = 25 };
 
-            smallHintStyle = new GUIStyle(GUI.skin.label) { fontSize = 15 };
-            smallHintStyle.normal.textColor = new Color(0.7f, 0.85f, 1f);
+            smallHintStyle = new GUIStyle(GUI.skin.label) { fontSize = 23 };
+            smallHintStyle.normal.textColor = new Color(0.85f, 0.95f, 1f);
 
-            warningStyle = new GUIStyle(GUI.skin.label) { fontSize = 18 };
-            warningStyle.normal.textColor = new Color(1f, 0.4f, 0.4f);
+            warningStyle = new GUIStyle(GUI.skin.label)
+            {
+                fontSize = 25,
+                fontStyle = FontStyle.Bold
+            };
+            warningStyle.normal.textColor = new Color(1f, 0.5f, 0.5f);
 
             stylesInitialized = true;
         }
@@ -98,7 +102,7 @@ namespace DebugConsoleMod
 
             GUILayout.EndScrollView();
 
-            GUILayout.Space(5);
+            GUILayout.Space(8);
 
             // === 日志区域（固定在底部）===
             GUILayout.Label("═══ 操作日志 ═══", headerStyle);
@@ -127,7 +131,7 @@ namespace DebugConsoleMod
             // === 状态警告区（顶部）===
             DrawWarningArea();
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === 新手引导区 ===
             GUILayout.Label("═══ 新手快速测试（3步）═══", headerStyle);
@@ -135,13 +139,13 @@ namespace DebugConsoleMod
             GUILayout.Label("2. 点击「完整测试（触发事件+修复Bug）」", smallHintStyle);
             GUILayout.Label("3. 进入Boss战 → 应该出现犹大", smallHintStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === 状态显示区域 ===
             GUILayout.Label("═══ 当前游戏状态 ═══", headerStyle);
             DrawGameState();
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === A. 快速测试区 ===
             GUILayout.Label("═══ A. 快速测试（推荐新手）═══", headerStyle);
@@ -153,7 +157,7 @@ namespace DebugConsoleMod
             GUILayout.Label("执行：直接传送到第三章白色墓地关卡", smallHintStyle);
             GUILayout.Label("用途：不用从头玩到Stage3，方便快速测试Boss替换", smallHintStyle);
 
-            GUILayout.Space(6);
+            GUILayout.Space(10);
 
             if (GUILayout.Button("完整测试（触发事件+修复Bug）", buttonStyle, GUILayout.Height(48)))
             {
@@ -163,7 +167,7 @@ namespace DebugConsoleMod
             GUILayout.Label("原因：游戏Bug导致乔汉任务永远不会标记完成，Boss无法替换", smallHintStyle);
             GUILayout.Label("结果：满足Boss替换条件，进入Boss战时会出现犹大", smallHintStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === B. 单项操作区 ===
             GUILayout.Label("═══ B. 单项操作（高级调试）═══", headerStyle);
@@ -183,7 +187,7 @@ namespace DebugConsoleMod
             GUILayout.Label("执行：设置审判官事件=true + 给予审判官火炬装备", smallHintStyle);
             GUILayout.Label("背景：正常游戏中需要在Stage3探索时随机遇到此事件", smallHintStyle);
 
-            GUILayout.Space(6);
+            GUILayout.Space(10);
 
             if (GUILayout.Button("修复乔汉任务Bug（只设置完成标志）", buttonStyle, GUILayout.Height(44)))
             {
@@ -197,7 +201,7 @@ namespace DebugConsoleMod
             GUILayout.Label("原因：游戏Bug！此处永远不会自动设为true，需手动设置", smallHintStyle);
             GUILayout.Label("区别：不会触发审判官事件，只修复Bug", smallHintStyle);
 
-            GUILayout.Space(6);
+            GUILayout.Space(10);
 
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("设置进度：1（第一次遇到）", buttonStyle, GUILayout.Height(44)))
@@ -219,7 +223,7 @@ namespace DebugConsoleMod
             GUILayout.EndHorizontal();
             GUILayout.Label("进度0=未开始，1=第一次遇到（开始任务），2=第二次遇到（触发事件）", smallHintStyle);
 
-            GUILayout.Space(6);
+            GUILayout.Space(10);
 
             // B2. 直接操作
             GUILayout.Label("── B2. 直接操作 ──", normalStyle);
@@ -231,7 +235,7 @@ namespace DebugConsoleMod
             GUILayout.Label("执行：清空当前敌人队列，直接填入 Queue_FanaticBoss", smallHintStyle);
             GUILayout.Label("区别：绕过所有条件检查，立即生效（不经过BossReplaceMod规则）", smallHintStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === C. 状态重置区 ===
             GUILayout.Label("═══ C. 状态重置 ═══", headerStyle);
@@ -262,7 +266,7 @@ namespace DebugConsoleMod
                 GUILayout.EndHorizontal();
             }
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 切换提示 ===
             GUILayout.Label("═══ 切换其他控制台 ═══", headerStyle);
@@ -302,7 +306,7 @@ namespace DebugConsoleMod
                 GUILayout.Label("当前关卡：" + stageKey, normalStyle);
                 GUILayout.Label("（当前所在的关卡，如 Stage3 = 白色墓地）", smallHintStyle);
 
-                GUILayout.Space(10);
+                GUILayout.Space(16);
 
                 bool theInquisition = false;
                 bool johanQuestClear = false;
@@ -330,7 +334,7 @@ namespace DebugConsoleMod
                     GUILayout.Label("提示：点击「完整测试」可同时设置这两项", smallHintStyle);
                 }
 
-                GUILayout.Space(10);
+                GUILayout.Space(16);
 
                 // === 详细状态 ===
                 GUILayout.Label("═══ 详细状态 ═══", headerStyle);
@@ -338,13 +342,13 @@ namespace DebugConsoleMod
                 GUILayout.Label("审判官事件已触发：" + ColoredBool(theInquisition), normalStyle);
                 GUILayout.Label("  含义：玩家在白色墓地遇到了异端审判官事件", smallHintStyle);
 
-                GUILayout.Space(4);
+                GUILayout.Space(7);
 
                 GUILayout.Label("乔汉任务已完成：" + ColoredBool(johanQuestClear), normalStyle);
                 GUILayout.Label("  含义：游戏Bug！此处永远为false，需手动设为true", smallHintStyle);
                 GUILayout.Label("  关键：这是Boss替换的必要条件，必须为true才会替换", smallHintStyle);
 
-                GUILayout.Space(4);
+                GUILayout.Space(7);
 
                 GUILayout.Label("乔汉任务进度：" + johanQuestProgress, normalStyle);
                 string progressMeaning = johanQuestProgress == 0 ? "（未开始）" :
@@ -352,17 +356,17 @@ namespace DebugConsoleMod
                     johanQuestProgress == 2 ? "（第二次遇到，触发事件）" : "（未知）";
                 GUILayout.Label("  含义：0=未开始, 1=开始任务, 2=触发事件" + progressMeaning, smallHintStyle);
 
-                GUILayout.Space(4);
+                GUILayout.Space(7);
 
                 GUILayout.Label("乔汉任务进行中：" + ColoredBool(isJohanQuest), normalStyle);
                 GUILayout.Label("  含义：当前是否正在执行乔汉任务剧情", smallHintStyle);
 
-                GUILayout.Space(4);
+                GUILayout.Space(7);
 
                 GUILayout.Label("Boss已击败：" + ColoredBool(bossClear), normalStyle);
                 GUILayout.Label("  含义：当前关卡的Boss是否已被击败", smallHintStyle);
 
-                GUILayout.Space(10);
+                GUILayout.Space(16);
 
                 // 显示NowBossQueueKeys
                 GUILayout.Label("── 预定Boss队列 ──", normalStyle);
@@ -383,7 +387,7 @@ namespace DebugConsoleMod
                     }
                 });
 
-                GUILayout.Space(6);
+                GUILayout.Space(10);
 
                 // 显示EnemyQueue
                 GUILayout.Label("── 当前关卡敌人队列 ──", normalStyle);

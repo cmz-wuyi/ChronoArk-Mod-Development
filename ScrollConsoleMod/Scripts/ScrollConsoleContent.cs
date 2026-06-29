@@ -56,7 +56,7 @@ namespace ScrollConsoleMod
             GUILayout.Label("═══ 卷轴获取控制台 ═══", headerStyle);
             GUILayout.Label("选择卷轴类型和数量，点击获取按钮添加到背包", smallHintStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === 选择卷轴类型 ===
             GUILayout.Label("═══ 选择卷轴类型 ═══", headerStyle);
@@ -72,14 +72,14 @@ namespace ScrollConsoleMod
                 selectedScrollIndex, displayNames, 2, buttonStyle,
                 GUILayout.Height(40 * ((ScrollList.Length + 1) / 2)));
 
-            GUILayout.Space(6);
+            GUILayout.Space(10);
 
             // 显示选中卷轴的说明
             GUILayout.Label("当前选中：" + ScrollList[selectedScrollIndex].DisplayName, normalStyle);
             GUILayout.Label("说明：" + ScrollList[selectedScrollIndex].Description, smallHintStyle);
             GUILayout.Label("Key：" + ScrollList[selectedScrollIndex].Key, smallHintStyle);
 
-            GUILayout.Space(10);
+            GUILayout.Space(16);
 
             // === 选择数量 ===
             GUILayout.Label("═══ 选择数量（1-99）═══", headerStyle);
@@ -106,7 +106,7 @@ namespace ScrollConsoleMod
             }
             GUILayout.EndHorizontal();
 
-            GUILayout.Space(8);
+            GUILayout.Space(13);
 
             // === 获取按钮 ===
             if (GUILayout.Button("获取卷轴", buttonStyle, GUILayout.Height(48)))
