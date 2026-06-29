@@ -1,6 +1,6 @@
 # ChronoArk Mod Development
 
-> Chrono Ark（时之幻境）游戏 Mod 开发合集 - 包含 Boss 修复、调试控制台、Boss 替换、卷轴获取等功能 mod
+> Chrono Ark（超时空方舟）游戏 Mod 开发合集 - 包含 Boss 修复、调试控制台、Boss 替换、卷轴获取等功能 mod
 
 本仓库包含 6 个独立的 Chrono Ark mod，涵盖 bug 修复、游戏内调试控制台、自定义 Boss 替换和道具获取等功能。所有 mod 均使用 Harmony 2.0.0 补丁框架开发，兼容游戏的 Unity 2018.4 Mono 运行时。
 
